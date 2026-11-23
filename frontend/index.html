@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Alexa - Museo Panóptico de Ibagué</title>
+    <!-- Estilos de Google Fonts para diseño moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Contenedor Principal Split-Screen -->
+        <div id="pantalla-inicio" class="split-container">
+            
+            <!-- LADO IZQUIERDO: Identidad Visual y Avatar -->
+            <div class="left-panel">
+                <div class="logo-container">
+                    <img src="assets/Logo_panoptico.png" alt="Museo Panóptico Logo" class="logo">
+                </div>
+                
+                <div class="avatar-container">
+                    <!-- Imagen temporal del avatar -->
+                    <!-- Reemplaza el <img> por este <video> -->
+                    <video id="video-avatar" class="avatar-media" src="/assets/alexa_completa.mp4" muted playsinline autoplay></video>
+                </div>
+                
+                <div class="status-indicator">
+                    <div class="mic-button" id="boton-microfono">
+                        <svg id="icono-mic-normal" viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mic-icon">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="22"></line>
+                        </svg>
+
+                        <!-- Animación de ondas (Escuchando) -->
+                        <div class="ondas-escuchando oculto" id="icono-mic-ondas">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        
+                        <!-- Animación circular (Procesando) -->
+                        <div class="spinner-procesando oculto" id="icono-mic-spinner"></div>
+                    </div>
+                    <p id="texto-instruccion-mic">Toca el micrófono para hablar</p>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO: Interacción (IA y Botones) -->
+            <div class="right-panel">
+                
+                <!-- 1. Menú estático de Botones (Visible en reposo) -->
+                <div id="bloque-botones-extra" class="botones-container">
+                    <button class="btn-extra">Deja tu marca aquí</button>
+                    <button class="btn-extra">Aprende mientras juegas</button>
+                </div>
+
+                <!-- 2. Interfaz de Diálogo IA (Oculto en reposo) -->
+                <div id="respuesta-voz-contenedor" class="chat-container oculto">
+                    <!-- Burbuja de pregunta del usuario -->
+                    <div class="user-bubble">
+                        <span class="label">Tú preguntaste:</span>
+                        <p id="texto-usuario-voz" class="texto-usuario">...</p>
+                    </div>
+                    
+                    <!-- Burbuja de respuesta de la IA -->
+                    <div class="ai-bubble">
+                        <h2 class="greeting-title">Alexa:</h2>
+                        <div id="ai-text" class="ai-response-text">
+                            <p id="texto-respuesta-voz">Soy tu guía virtual...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTÓN VOLVER FLOTANTE -->
+            <button id="btn-volver-voz" class="boton-volver-flotante oculto">
+                ⬅ Volver
+            </button>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
