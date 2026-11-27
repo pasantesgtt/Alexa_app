@@ -3,12 +3,6 @@
 
 # Entornos virtuales (tanto env como venv)
 env/
-venv/
-
-# Archivos de audio de prueba y temporales
-*.mp3
-*.wav
-temp_audio/
 
 # Caché de Python
 __pycache__/
